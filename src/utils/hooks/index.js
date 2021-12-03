@@ -8,8 +8,9 @@ function useFetch(url){
         fetch(url)
         .then((response) => response.json())
         .then((newData) => setData(newData))
+
         .catch((error) => console.log(error))
-        updateIsLoaded(true)
+        .then(() => updateIsLoaded(true))
     },[])
 
     return { isLoaded, data }
