@@ -4,7 +4,7 @@
 
 ### `git clone https://github.com/SelimWebDev/cinemap.git`
 
-## Instller les dépendances :
+## Dans le dossier cinemap/ , installer les dépendances :
 
 ### `npm install`
 
