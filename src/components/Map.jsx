@@ -24,7 +24,7 @@ function Map({selectedFilter}){
                 map.data.loadGeoJson("http://localhost:3001/api/data/filters/" + selectedFilter)    // on y charge l'arrondissement select
                 map.data.loadGeoJson("http://localhost:3001/api/data/positions/" + selectedFilter,{idPropertyName: 'positions'}); // on charge les position
 
-                map.data.setStyle(function(feature) {
+                map.data.setStyle(function(feature) {                               // on change l'image de l'icone, s'applique aux points par défaut
                     if (feature.getProperty('annee_tournage')) {
                       return {
                           icon: {
