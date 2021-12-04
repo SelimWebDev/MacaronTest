@@ -1,13 +1,19 @@
 # Cette application a été créée avec create-react-app
 
-## Script de lancement
 
-Dans le dossier \cinemap vous pouvez lancer le script :
 
-### `yarn start`
+## Script Backend
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Dans le dossier \cinemap\back vous pouvez lancer le server NodeJS avec le script :
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### `node server`
+
+
+
+## Script Frontend
+
+Dans le dossier \cinemap vous pouvez lancer le front React avec les scripts :
+
+### `yarn start` ou `npm start`
+
+Ouvrez (http://localhost:3000) pour voir l'application dans le navigateur

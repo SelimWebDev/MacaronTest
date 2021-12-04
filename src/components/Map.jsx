@@ -17,7 +17,7 @@ function Map({selectedFilter}){
                 zoom: 12,
                 center: { lat: 48.864716, lng: 2.349014 }
             })
-            if(selectedFilter === ""){                                              //si auccun filtre sélectionné
+            if(selectedFilter === "default"){                                      //si auccun filtre sélectionné
                 map.data.loadGeoJson("http://localhost:3001/api/data/filters")    // on charge tout arrondissements
             } else {
                 map.data.loadGeoJson("http://localhost:3001/api/data/filters/" + selectedFilter)    // on y charge l'arrondissement select
@@ -38,24 +38,34 @@ function Map({selectedFilter}){
                 // Show the information for a store when its marker is clicked.
                 const infoWindow = new window.google.maps.InfoWindow();                             // on créer une infoWindow
                 map.data.addListener('click', (event) => {                                          // listener click sur la map.data
-                    const annee_tournage = event.feature.getProperty('annee_tournage');             // on ajoute les propriété de la position cliqué
-                    const type_tournage = event.feature.getProperty('type_tournage');               // a infowWindow
-                    const nom_producteur = event.feature.getProperty('nom_producteur');
-                    const IBRAHIM = event.feature.getProperty('IBRAHIM');
-                    const nom_realisateur = event.feature.getProperty('nom_realisateur');
-                    const position = event.feature.getGeometry().get();
-                    const content = `
-                    <span>${annee_tournage}<span><b>
-                    <span>${type_tournage}<span><b>
-                    <span>${nom_producteur}<span><b>
-                    <span>${IBRAHIM}<span><b>
-                    <span>${nom_realisateur}<span><b>
-                    `;
-    
-                    infoWindow.setContent(content);
-                    infoWindow.setPosition(position);
-                    infoWindow.setOptions({pixelOffset: new window.google.maps.Size(0, -30)});
-                    infoWindow.open(map);
+                    if(event.feature.getProperty("annee_tournage")){                                // si on click sur un point
+                        const annee_tournage = event.feature.getProperty('annee_tournage');         // on ajoute les propriété de la position cliqué
+                        const type_tournage = event.feature.getProperty('type_tournage');           // a infowWindow
+                        const nom_producteur = event.feature.getProperty('nom_producteur');
+                        const nom_tournage = event.feature.getProperty('nom_tournage');
+                        const nom_realisateur = event.feature.getProperty('nom_realisateur');
+                        const date_fin = event.feature.getProperty('date_fin');
+                        const date_debut = event.feature.getProperty('date_debut');
+                        const adresse_lieu = event.feature.getProperty('adresse_lieu');
+                        
+                        
+                        const position = event.feature.getGeometry().get();
+                        const content = `
+                        <span>année de tournage : ${annee_tournage}<span><b><br>
+                        <span>type de tournage : ${type_tournage}<span><b><br>
+                        <span>nom du producteur : ${nom_producteur}<span><b><br>
+                        <span>nom du tournage : ${nom_tournage}<span><b><br>
+                        <span>nom du réalisateur : ${nom_realisateur}<span><b><br>
+                        <span>date de début : ${date_debut}<span><b><br>
+                        <span>date de fin : ${date_fin}<span><b><br>
+                        <span>adresse du lieur : ${adresse_lieu}<span><b>
+                        `;
+        
+                        infoWindow.setContent(content);
+                        infoWindow.setPosition(position);
+                        infoWindow.setOptions({pixelOffset: new window.google.maps.Size(0, -30)});
+                        infoWindow.open(map);
+                    }                                         
                 });    
             }                    
         }

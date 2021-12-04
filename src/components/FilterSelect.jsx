@@ -2,33 +2,33 @@
 
 function FilterSelect({filtersList, update}){
 
-    function handleChange(e){                                   //
+    function handleChange(e){              
         let districtSelected = ""
-
-        if ( e.target.value < 10){                              // on formate la valeur sélectionné 
-            districtSelected = '0' + e.target.value
-        } else if ( e.target.value === ""){
-            districtSelected = ""
-        } else {
-            districtSelected = e.target.value
-        }
-
+        if (e.target.value !== "default"){
+            if ( e.target.value < 10){                              // on formate la valeur sélectionné 
+                districtSelected = '0' + e.target.value
+            } else {
+                districtSelected = e.target.value
+            }
+    
+        } else districtSelected = "default"
         update(districtSelected)                                // on update le state du composant parent
     }
 
     return (
-        <div id="FilterSelect">
-            <label htmlFor="district-select">Afficher par arrondissement</label>
+        <div id="FilterSelect-layout">
+            <div id="FilterSelect">
+                <label htmlFor="district-select">Choisissez un arrondissement</label>
 
-            <select name="districts" id="district-select" onChange={(e) => handleChange(e)}>
+                <select name="districts" id="district-select" onChange={(e) => handleChange(e)}>
 
-                <option value="all"></option> 
-                {filtersList.map((filter, index) => (
-                    <option key={index} value={filter.code}>{filter.name}</option>
-                ))}
+                    <option value="default"></option> 
+                    {filtersList.map((filter, index) => (
+                        <option key={index} value={filter.code}>{filter.name}</option>
+                    ))}
 
-            </select>
-
+                </select>
+            </div>
         </div>
     )
 }

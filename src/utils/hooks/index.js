@@ -11,17 +11,9 @@ function useFetch(url){
 
         .catch((error) => console.log(error))
         .then(() => updateIsLoaded(true))
-    },[])
+    },[url])
 
     return { isLoaded, data }
-}
-
-
-function useSelectedFilter(url, selectedFilter){
-    const { data, setData } = useState({})
-    const [isLoaded, updateIsLoaded ] = useState(false)
-
-    useFetch(url + selectedFilter)
 }
 
 export default useFetch
