@@ -4,15 +4,15 @@
 
 ### `git clone https://github.com/SelimWebDev/cinemap.git`
 
-## Dans le dossier cinemap/ , installer les dépendances :
+## Dans cinemap/ installer les dépendances :
 
 ### `npm install`
 
-## Lancer le serveur :
+## Dans cinemap/ lancer le serveur :
 
 ### `npm run start-server`
 
-## Lancer le front :
+## Dans cinemap/ lancer le front :
 
 ### `npm run start-front`
 
