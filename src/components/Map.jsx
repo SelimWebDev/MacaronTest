@@ -5,6 +5,7 @@ import { useJsApiLoader } from '@react-google-maps/api'
 import { useEffect } from 'react';
  
 function Map({selectedFilter}){
+    
     const API_KEY = "AIzaSyDZmhBETb4d7U-Qk5NN4ZLz7MB0BPqlc9M"
     const { isLoaded } = useJsApiLoader({                                                       // on charge l'api google
       id: 'google-map-script',
