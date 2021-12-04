@@ -21,11 +21,23 @@ function Map({selectedFilter}){
                 map.data.loadGeoJson("http://localhost:3001/api/data/filters")    // on charge tout arrondissements
             } else {
                 map.data.loadGeoJson("http://localhost:3001/api/data/filters/" + selectedFilter)    // on y charge l'arrondissement select
-                map.data.loadGeoJson("http://localhost:3001/api/data/positions/" + selectedFilter); // on y charge les positions
-    
+                map.data.loadGeoJson("http://localhost:3001/api/data/positions/" + selectedFilter,{idPropertyName: 'positions'}); // on charge les position
+
+                map.data.setStyle(function(feature) {
+                    if (feature.getProperty('annee_tournage')) {
+                      return {
+                          icon: {
+                              url: 'https://image.flaticon.com/icons/png/512/60/60765.png',
+                              scaledSize: new window.google.maps.Size(8, 8)
+                          }
+                      }
+                    } 
+                  });
+                
+                
                 // Show the information for a store when its marker is clicked.
                 const infoWindow = new window.google.maps.InfoWindow();                             // on créer une infoWindow
-                map.data.addListener('click', (event) => {                                          // lister click sur la map
+                map.data.addListener('click', (event) => {                                          // listener click sur la map.data
                     const annee_tournage = event.feature.getProperty('annee_tournage');             // on ajoute les propriété de la position cliqué
                     const type_tournage = event.feature.getProperty('type_tournage');               // a infowWindow
                     const nom_producteur = event.feature.getProperty('nom_producteur');

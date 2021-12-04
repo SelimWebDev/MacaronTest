@@ -37,11 +37,27 @@
   }
 }
 
+html {
+  height: 100vh;
+}
+
 body {
   height: 100%;
 }
 
+#root {
+  height: 100%;
+}
+
+#App {
+  height: 100%;
+}
+
+#FilterSelect {
+  height: 5%;
+}
+
 #Map {
-  height: 500px;
-  width: 500px;
+  height: 95%;
+  width: 100%;
 }

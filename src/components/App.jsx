@@ -13,7 +13,7 @@ function App() {
   const filtersList = data
 
   return (
-    <div>
+    <div id="App">
       {isLoaded && <FilterSelect  filtersList={filtersList} update={updateSelectedFilter}/>}      
       <Map selectedFilter={selectedFilter}/>
     </div>
