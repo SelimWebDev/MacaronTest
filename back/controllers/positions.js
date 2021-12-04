@@ -6,7 +6,7 @@ exports.getAll = (req, res, next) => {                                          
 
 exports.getByDistrict = (req, res, next) => {                                           // renvoie les positions demandés
     var newJson = {"type":"FeatureCollection","features":[]}
-    const codeSelected = req.params.district                                                // on récupère l'arrondissement demandé en parametre requete
+    const codeSelected = req.params.id                                                // on récupère l'arrondissement demandé en parametre requete
     positions.features.map((feature) => {                                               // on parcour le tableau de lieu de tournage/feature
         var featureArr = ""
         if (feature.properties.ardt_lieu){                                               // si l'arrondissement est indiqué dans la feature
