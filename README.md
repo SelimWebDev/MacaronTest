@@ -1,19 +1,24 @@
-# Cette application a été créée avec create-react-app
+# Cinemap React/NodeJS
 
+## Pour installer l'application
 
+clonez la depuis git :
 
-## Script Backend
+### `git clone https://github.com/SelimWebDev/cinemap.git`
 
-Dans le dossier \cinemap\back vous pouvez lancer le server NodeJS avec le script :
+Placez vous dans le dossier cinemap, puis installer les dépendance avec :
+
+### `npm install`
+
+## Pour démarrer l'application
+
+Placez vous dans le dossier cinemap/back, puis utilisez :
 
 ### `node server`
 
+Puis placez vous dans le dossier cinemap/ puis lancer le front avec :
 
+### `npm start`
 
-## Script Frontend
+L'application se trouve sur ('http://localhost:3000)
 
-Dans le dossier \cinemap vous pouvez lancer le front React avec les scripts :
-
-### `yarn start` ou `npm start`
-
-Ouvrez (http://localhost:3000) pour voir l'application dans le navigateur
