@@ -1,20 +1,20 @@
 # Cinemap React/NodeJS
 
-## Cloner l'application :
+## Pour cloner l'application :
 
 ### `git clone https://github.com/SelimWebDev/cinemap.git`
 
-## Dans cinemap/ installer les dépendances :
+## Pour instller les dépendances, dans le dossier cinemap/ :
 
 ### `npm install`
 
-## Dans cinemap/ lancer le serveur :
+## Pour lancer le serveur, dans  le dossier cinemap/ :
 
 ### `npm run start-server`
 
-## Dans cinemap/ lancer le front :
+## Pour lancer le front React,dans le dossier cinemap/ :
 
 ### `npm run start-front`
 
-L'application se trouve sur ('http://localhost:3000)
+L'application se trouve à l'adresse ('http://localhost:3000)
 
