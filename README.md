@@ -4,7 +4,7 @@
 
 ### `git clone https://github.com/SelimWebDev/cinemap.git`
 
-## Pour instller les dépendances, dans le dossier cinemap/ :
+## Pour installer les dépendances, dans le dossier cinemap/ :
 
 ### `npm install`
 
@@ -12,7 +12,7 @@
 
 ### `npm run start-server`
 
-## Pour lancer le front React,dans le dossier cinemap/ :
+## Pour lancer le front React, dans le dossier cinemap/ :
 
 ### `npm run start-front`
 
