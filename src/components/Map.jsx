@@ -1,5 +1,4 @@
-//Composant qui charge qui recois le filtre par défaut ou le filtre sélectionné, il charge l'api google,
-// créer la map, et demande les geoJson à l'API en fonction du filtre
+// Composant qui créé la google map, et demande les donnés GeoJson à l'API en fonction de l'arrondissement envoyé en parametre
 
 import { useJsApiLoader } from '@react-google-maps/api'
 import { useEffect } from 'react';
